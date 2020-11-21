@@ -1,0 +1,10 @@
+taxi-traffic-observer:
+  subscriber:
+    credentialsPath: ${GOOGLE_APPLICATION_CREDENTIALS:null}
+    projectId: "null"
+    subscriptionId: "null"
+    executorThreadCount: 1
+    parallelPullCount: 1
+  aggregator:
+    backwardAggregationCycles: 5 # means it will always recalculate the last X hours result
+

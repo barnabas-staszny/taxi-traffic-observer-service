@@ -1,0 +1,44 @@
+taxi-traffic-observer:
+  subscriber:
+    credentialsPath: ${GOOGLE_APPLICATION_CREDENTIALS:src/main/resources/sb-ems-dp-candidates-9cfc84b015ca.json}
+    projectId: "ems-dp-candidates"
+    subscriptionId: "taxirides-sb-902224434190"
+    executorThreadCount: 4 #must: {executorThreadCount * parallelPullCount} <= CPU cores, otherwise acknowledging thread pool can starve and timing out on ack!
+    parallelPullCount: 1 #must: {executorThreadCount * parallelPullCount} <= CPU cores, otherwise acknowledging thread pool can starve and timing out on ack!
+  aggregator:
+    backwardAggregationCycles: 50 # means it will always recalculate the last X hours result
+
+spring:
+  application:
+    name: taxi-traffic-observer
+  datasource:
+    url: jdbc:postgresql://${PG_HOST:taxi-traffic-db}:${PG_PORT:5432}/${PG_DATABASE_NAME:taxi-traffic}?useUnicode=true&characterEncoding=utf8&stringtype=unspecified
+    username: ${PG_USER:taxi}
+    password: ${PG_PASSWORD:taxi}
+    max-active: 120
+    max-wait: 10000
+    test-on-borrow: false
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    show-sql: false
+    generate-ddl: false
+    hibernate:
+      naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+      ddl-auto: ${DDL_AUTO:validate} #in production it should be validate
+      globally_quoted_identifiers: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        default_schema: taxi #set for DDL_AUTO generation
+        jdbc.time_zone: UTC
+  flyway:
+    url: jdbc:postgresql://${PG_HOST:taxi-traffic-db}:${PG_PORT:5432}/${PG_DATABASE_NAME:taxi-traffic}?useUnicode=true&characterEncoding=utf8&stringtype=unspecified
+    schemas: taxi #set for the "technical" scheduler sync tables
+    user: ${PG_USER:taxi}
+    password: ${PG_PASSWORD:taxi}
+
+
+#Set application specific logging level to DEBUG
+#logging.level.com.taxi.*: DEBUG
+logging.level.com.taxi.traffic.observer.subscriptor.business.TaxiRideServiceImpl: DEBUG

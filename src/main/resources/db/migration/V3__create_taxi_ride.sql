@@ -1,0 +1,1 @@
+create table taxi.taxi_ride (ride_id uuid not null, ride_status varchar(255) not null, message_timestamp timestamp, passenger_count int4 not null, created_time timestamp, modified_time timestamp, primary key (ride_id, ride_status))

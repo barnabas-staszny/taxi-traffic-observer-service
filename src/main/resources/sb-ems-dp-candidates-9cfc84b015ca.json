@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ems-dp-candidates",
+  "private_key_id": "9cfc84b015cae077294542605c234ca1e652553e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC83KXeQAF+3Hq4\ncPNIRAmS+sAuA3MWDMxn8eAAAjQ3TJ3C1XZBEo8ANbrkz47EbXTtQmxO3lDyL90K\nivqGUQD5/qem0rtahChYxoPoK66S6nI8onTpTrAqdpRQOznxvNZUslUFHRCzcb1u\n1k29vFGHVt1CKHhqtwPx0YPQVPCFiJKFKmEQqaupxYVtiSmEy13j01b+asOsV2Kb\n662PvJGvJuW9gXnHQsC8ADqXbhEb+Fg+Vh6cq/BFS1ZwH30plZdPFvQMRE3z6eKV\nRQeBw7QJCDBfLsSfOQtyFW5/gQ9fn00kBAGK2LMhsnnWwrFRM8M1inerVbFsdj0z\nt5Yl8eVBAgMBAAECggEAAeua7qd3NG1kvI0edibF86YDz/v2PrxG1Ew97zYWhpTr\nejyOKSN5i4KgWb0ACkCEKrjtDcC+MTY6IMYwva6jbEdR+FTmdYlIOT3cf7749ZK3\ncmUi++/SQ/5EbAvsHwiA4+fTzDtjTPXMO60naXVZnV8NXSO49LnTaxEqrlK8xtjM\nDfbdPND+r9G4Xa1K4VmNYws5BKRCoOBFsL0kHnttQ1zB5WZUIob3IqhTBxB3LPcc\n+lqHe7QM4h6HwlfU2X23cJZrYY4F6dL1m5IcXAj+1WYr7Ebj7QcJGZz70FbAd0N5\nyA6o1ciY87n8jAXX1nFEi3eLGHITgOt90UmwkdaYaQKBgQDk1D/sqGGqRsFZ/meJ\nT2Rli8vpUIuo2ejkCIoNG+ZdhzNrLevPrA3sVlveB41JfQ8WpluT/8bKeVGNnplA\nB50Lp8+FumRxoG7WYkFxNbfCiH9iQ72GcjgDi2YFBvkoAALCdI8PW9jP3cLyvOcz\n46NxwTMw+JitXRw6nxdvkNphSQKBgQDTSYKB+db2dh3KLt3MVVBnw4GFpVAXKwVB\nP6ZBXx8+2YZfLTMEGuE17bN3EHsfhpj8pfM1enN/JZFu+MVP+iLUn+PMpJp7hsSY\nEqjzQfhOIInVeWUo4tON0pSMWq9CjzkGX/TqVHta9A1jRhQ1VbRvVFM36Xbgbg0J\niEgJ83xcOQKBgCV9RI/QMlgESY8l5+6ODEO6uIicApWCRe5+G6f0JzSxftITbuvS\nI2HR8DEbCaG9lGhAjwZbREVNxPevwSnFVYxgTNZ66BPZle8Xn+MdSuLbHAuMT5Ok\nSNsDzo4KS22rOsiC8iExCf9cNKEyI6rTo6ZyYaGnSNQ2Sfass9k6YRzJAoGAAm14\ny2eEecZ3pygMsllUmCyd41w35FxBLjO+BEhEgqNbMOLDEEwCxGzbwAV3dLBGN7js\nZ3PludNDrYO8OKQGHG1N378Qa1TsE1c7i7f5U2R6UPKZH/QjPCDsRgSQuPIOVK1r\nkfmwhSYCtV5LwyUd8p2Ea0MKc5+wFKj1MvASQLkCgYEAkVKX4bjA3Zyf1cO+3dhs\nTAgsGVI08ZSb0iEsxHcJfqwV5xtwiNiOXElBNsH40gRySx4kudGkN14+5Mf523y0\nlKT3wUfeE6gJiSHDwCp4rtC2EQHL3a0VvFIIE4t5CbAEB/C0eqPnJ2jUh0jtzcnH\n6zbk8VxlH5gRhyqhHvYZkjI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "taxirides-sb-902224434190-cons@ems-dp-candidates.iam.gserviceaccount.com",
+  "client_id": "107543242548617129162",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/taxirides-sb-902224434190-cons%40ems-dp-candidates.iam.gserviceaccount.com"
+}

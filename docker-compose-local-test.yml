@@ -1,0 +1,28 @@
+version: '3'
+services:
+  taxi-traffic-db:
+    image: postgres:12 #pgadmin4 does not work properly with postgres:13
+    container_name: taxi-traffic-db
+    command:
+      postgres -c shared_preload_libraries='pg_stat_statements'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: taxi
+      POSTGRES_USER: taxi
+      POSTGRES_DB: taxi-traffic
+    networks:
+      - taxi-network
+  pgadmin4:
+    image: dpage/pgadmin4:4.28
+    container_name: pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8889:80"
+    networks:
+      - taxi-network
+networks:
+  taxi-network:
+    driver: bridge

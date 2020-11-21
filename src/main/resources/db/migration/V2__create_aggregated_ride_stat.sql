@@ -1,0 +1,1 @@
+create table taxi.aggregated_ride_stat (hour_of_aggregation varchar(255) not null, created_time timestamp, modified_time timestamp, dropoff_counter int8 not null, dropoff_passengers_counter int8 not null, pickup_counter int8 not null, pickup_passengers_counter int8 not null, primary key (hour_of_aggregation))

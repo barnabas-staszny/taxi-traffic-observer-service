@@ -1,0 +1,13 @@
+version: '3'
+services:
+  taxi-traffic-db:
+    image: postgres:13.1
+    container_name: taxi-traffic-db
+    command:
+      postgres -c shared_preload_libraries='pg_stat_statements'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: taxi
+      POSTGRES_USER: taxi
+      POSTGRES_DB: taxi-traffic
