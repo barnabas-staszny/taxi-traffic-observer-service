@@ -12,7 +12,7 @@ spring:
   application:
     name: taxi-traffic-observer
   datasource:
-    url: jdbc:postgresql://${PG_HOST:taxi-traffic-db}:${PG_PORT:5432}/${PG_DATABASE_NAME:taxi-traffic}?useUnicode=true&characterEncoding=utf8&stringtype=unspecified
+    url: jdbc:postgresql://${PG_HOST:localhost}:${PG_PORT:5432}/${PG_DATABASE_NAME:taxi-traffic}?useUnicode=true&characterEncoding=utf8&stringtype=unspecified
     username: ${PG_USER:taxi}
     password: ${PG_PASSWORD:taxi}
     max-active: 120
@@ -33,7 +33,7 @@ spring:
         default_schema: taxi #set for DDL_AUTO generation
         jdbc.time_zone: UTC
   flyway:
-    url: jdbc:postgresql://${PG_HOST:taxi-traffic-db}:${PG_PORT:5432}/${PG_DATABASE_NAME:taxi-traffic}?useUnicode=true&characterEncoding=utf8&stringtype=unspecified
+    url: jdbc:postgresql://${PG_HOST:localhost}:${PG_PORT:5432}/${PG_DATABASE_NAME:taxi-traffic}?useUnicode=true&characterEncoding=utf8&stringtype=unspecified
     schemas: taxi #set for the "technical" scheduler sync tables
     user: ${PG_USER:taxi}
     password: ${PG_PASSWORD:taxi}

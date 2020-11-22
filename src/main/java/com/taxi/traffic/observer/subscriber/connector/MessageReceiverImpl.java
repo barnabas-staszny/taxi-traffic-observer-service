@@ -34,7 +34,7 @@ public class MessageReceiverImpl implements MessageReceiver {
 
         TaxiRideDto taxiRideDto = deserializePayload(message.getData());
         if (!isSkippable(taxiRideDto)) {
-            TaxiRide taxiRide = taxiRideService.processTaxiRide(taxiRideDto);
+            TaxiRide taxiRide = taxiRideService.storeTaxiRide(taxiRideDto);
             aggregatorService.aggregationConsistencyHandler(taxiRide);
         } else if (log.isTraceEnabled()) {
             log.trace("Skipping message: {} ", message);

@@ -47,7 +47,7 @@ public class TaxiRideServiceTest {
 
         TaxiRideDto taxiRideDto = OBJECT_MAPPER.readValue(testData, TaxiRideDto.class);
 
-        TaxiRide taxiRide = taxiRideService.processTaxiRide(taxiRideDto);
+        TaxiRide taxiRide = taxiRideService.storeTaxiRide(taxiRideDto);
 
         Assert.assertNotNull(taxiRide);
         Assert.assertEquals(taxiRideDto.getPassengerCount(), taxiRide.getPassengerCount());
@@ -74,7 +74,7 @@ public class TaxiRideServiceTest {
 
         Mockito.when(taxiRideRepository.findById(any(TaxiRideId.class))).thenReturn(Optional.empty());
 
-        TaxiRide taxiRide = taxiRideService.processTaxiRide(taxiRideDto);
+        TaxiRide taxiRide = taxiRideService.storeTaxiRide(taxiRideDto);
 
         Assert.assertNotNull(taxiRide);
         Assert.assertNotNull(taxiRide.getTaxiRideId());
@@ -106,7 +106,7 @@ public class TaxiRideServiceTest {
         Mockito.when(taxiRideRepository.findById(any(TaxiRideId.class))).thenReturn(Optional.of(oldTaxiRide));
 
 
-        TaxiRide taxiRide = taxiRideService.processTaxiRide(taxiRideDto);
+        TaxiRide taxiRide = taxiRideService.storeTaxiRide(taxiRideDto);
 
         Assert.assertNotNull(taxiRide);
         Assert.assertNotNull(taxiRide.getTaxiRideId());

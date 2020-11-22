@@ -24,7 +24,7 @@ public class TaxiRideServiceImpl implements TaxiRideService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
-    public TaxiRide processTaxiRide(TaxiRideDto taxiRideDto) {
+    public TaxiRide storeTaxiRide(TaxiRideDto taxiRideDto) {
 
         Optional<TaxiRide> oTaxiRide = taxiRideRepository.findById(getTaxiRideId(taxiRideDto));
         TaxiRide taxiRide = oTaxiRide.map(oldTaxiRide -> updateTaxiRideModel(taxiRideDto, oldTaxiRide))

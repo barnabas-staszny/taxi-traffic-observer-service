@@ -11,3 +11,17 @@ services:
       POSTGRES_PASSWORD: taxi
       POSTGRES_USER: taxi
       POSTGRES_DB: taxi-traffic
+    networks:
+      - taxi-network
+  taxi-traffic-observer-service:
+    image: conq/traffic-observer:0.0.1-SNAPSHOT
+    container_name: observer-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - taxi-traffic-db
+    networks:
+      - taxi-network
+networks:
+  taxi-network:
+    driver: bridge

@@ -53,7 +53,7 @@ public class MessageReceiverTest {
         Exception ex = getException(() -> messageReceiver.receiveMessage(mockPubsubMessage, mockAckReplyConsumer));
         Assert.assertNotNull(ex);
         Assert.assertTrue(ex.getCause() instanceof JsonParseException);
-        Mockito.verify(taxiRideService, Mockito.times(0)).processTaxiRide(any());
+        Mockito.verify(taxiRideService, Mockito.times(0)).storeTaxiRide(any());
         Mockito.verify(aggregatorService, Mockito.times(0)).aggregationConsistencyHandler(any());
         Mockito.verify(mockAckReplyConsumer, Mockito.times(0)).ack();
 
@@ -72,7 +72,7 @@ public class MessageReceiverTest {
         Exception ex = getException(() -> messageReceiver.receiveMessage(mockPubsubMessage, mockAckReplyConsumer));
         Assert.assertNull(ex);
         Mockito.verify(mockAckReplyConsumer, Mockito.times(1)).ack();
-        Mockito.verify(taxiRideService, Mockito.times(0)).processTaxiRide(any());
+        Mockito.verify(taxiRideService, Mockito.times(0)).storeTaxiRide(any());
         Mockito.verify(aggregatorService, Mockito.times(0)).aggregationConsistencyHandler(any());
 
     }
@@ -90,7 +90,7 @@ public class MessageReceiverTest {
         Exception ex = getException(() -> messageReceiver.receiveMessage(mockPubsubMessage, mockAckReplyConsumer));
         Assert.assertNull(ex);
         Mockito.verify(mockAckReplyConsumer, Mockito.times(1)).ack();
-        Mockito.verify(taxiRideService, Mockito.times(0)).processTaxiRide(any());
+        Mockito.verify(taxiRideService, Mockito.times(0)).storeTaxiRide(any());
         Mockito.verify(aggregatorService, Mockito.times(0)).aggregationConsistencyHandler(any());
 
     }
@@ -108,7 +108,7 @@ public class MessageReceiverTest {
         Exception ex = getException(() -> messageReceiver.receiveMessage(mockPubsubMessage, mockAckReplyConsumer));
         Assert.assertNull(ex);
         Mockito.verify(mockAckReplyConsumer, Mockito.times(1)).ack();
-        Mockito.verify(taxiRideService, Mockito.times(1)).processTaxiRide(any());
+        Mockito.verify(taxiRideService, Mockito.times(1)).storeTaxiRide(any());
         Mockito.verify(aggregatorService, Mockito.times(1)).aggregationConsistencyHandler(any());
 
     }
@@ -126,7 +126,7 @@ public class MessageReceiverTest {
         Exception ex = getException(() -> messageReceiver.receiveMessage(mockPubsubMessage, mockAckReplyConsumer));
         Assert.assertNull(ex);
         Mockito.verify(mockAckReplyConsumer, Mockito.times(1)).ack();
-        Mockito.verify(taxiRideService, Mockito.times(1)).processTaxiRide(any());
+        Mockito.verify(taxiRideService, Mockito.times(1)).storeTaxiRide(any());
         Mockito.verify(aggregatorService, Mockito.times(1)).aggregationConsistencyHandler(any());
 
     }

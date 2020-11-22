@@ -5,5 +5,5 @@ import com.taxi.traffic.observer.subscriber.dto.TaxiRideDto;
 import com.taxi.traffic.observer.subscriber.model.TaxiRide;
 
 public interface TaxiRideService {
-    TaxiRide processTaxiRide(TaxiRideDto taxiRideDto);
+    TaxiRide storeTaxiRide(TaxiRideDto taxiRideDto);
 }
