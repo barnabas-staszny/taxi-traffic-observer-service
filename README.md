@@ -15,12 +15,12 @@ be aware that the statistics are generated and or updated once per minute so it 
  - http://localhost:8080/taxirides
  - http://localhost:8080/statistics
 ##### 3. Connect to database for further checks
-host: localhost
-port: 5432
-database: taxi-traffic
-schema: taxi
-user: taxi
-password: taxi
+ - host: localhost
+ - port: 5432
+ - database: taxi-traffic
+ - schema: taxi
+ - user: taxi
+ - password: taxi
 
 ## Tech stack of the application:
  - Java 8
@@ -46,6 +46,6 @@ The aggregator counts down the ```pickup```-s, ```dropoff```-s, ```pickupPasseng
 In the ```application.yml``` it can be configured that how many hours will be looked back for aggregation by this job. The property called ```taxi-traffic-observer.aggregator.backwardAggregationCycles```, by default it has been set to 50 hours. So the aggregator contionourly recalculates the last 50 hours of aggregations and upserts those into the ```aggregated_ride_stat``` table.
 To keep the data allways consistent the **'Message receiver job' also initiates** asynchronously **an aggregation cycle** the the message_time is out of the configured scheduled aggregation cycles. For example in this case if there is a message which is 51 hours old then the aggregator job would skip to recalculate that hourly aggregation but the message receiver will initiate an aggregation for that as well.
 
-#### Credentials
+## Credentials
 In a real production scenario I would not push the sb-ems-dp-candidates-9cfc84b015ca.json to github and into the docker image but to make it easy to test the solution it is included now.
 
